@@ -1,16 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
   images: {
-    domains: [
-      // Add any external domains for images here (e.g., CDN or external APIs)
-      'images.unsplash.com',
-      'cdn.jsdelivr.net'
-    ],
+    domains: ['images.unsplash.com'], // Add any other image domains you use
   },
-  experimental: {
-    appDir: true, // Enable the `/app` directory structure
+  typescript: {
+    ignoreBuildErrors: false, // Ensure type checking during build
   },
 }
 

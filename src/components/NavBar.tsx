@@ -5,19 +5,18 @@ import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
+const navLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Services', href: '/services' },
+  { name: 'Portfolio', href: '/portfolio' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Blog', href: '/blog' },
+]
+
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
-
-  const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/#services' },
-    { name: 'Portfolio', href: '/#portfolio' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Blog', href: '/blog' }
-
-  ]
 
   useEffect(() => {
     setIsOpen(false)
@@ -42,7 +41,7 @@ export default function NavBar() {
               <Link
                 href={link.href}
                 className={`hover:text-secondary transition ${
-                  pathname === link.href.split('#')[0] ? 'text-secondary font-semibold' : ''
+                  pathname === link.href ? 'text-secondary font-semibold' : ''
                 }`}
               >
                 {link.name}
