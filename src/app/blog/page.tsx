@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'; // Changed to named import
 import Link from 'next/link';
 
 export const metadata = {
